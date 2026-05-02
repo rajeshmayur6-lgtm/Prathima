@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Love Website ❤️</title>
+
+<style>
+
+body{
+    margin:0;
+    padding:0;
+    overflow:hidden;
+    background:black;
+    height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    flex-direction:column;
+    font-family:Arial;
+}
+
+img{
+    width:250px;
+    border-radius:20px;
+    box-shadow:0 0 30px red;
+    z-index:2;
+}
+
+h1{
+    color:white;
+    margin-top:20px;
+    font-size:40px;
+    text-shadow:0 0 20px red;
+    z-index:2;
+}
+
+audio{
+    margin-top:20px;
+    z-index:2;
+}
+
+.heart{
+    position:absolute;
+    top:-20px;
+    color:red;
+    font-size:25px;
+    animation:fall linear forwards;
+}
+
+@keyframes fall{
+    to{
+        transform:translateY(110vh);
+    }
+}
+
+</style>
+</head>
+
+<body>
+
+<img src="photo.jpg">
+
+<h1>I Love You ❤️</h1>
+
+<audio controls autoplay loop>
+    <source src="music.mp3" type="audio/mp3">
+</audio>
+
+<script>
+
+function createHeart(){
+
+    const heart = document.createElement("div");
+
+    heart.classList.add("heart");
+
+    heart.innerHTML = "❤️";
+
+    heart.style.left = Math.random() * 100 + "vw";
+
+    heart.style.animationDuration =
+    (Math.random() * 3 + 2) + "s";
+
+    document.body.appendChild(heart);
+
+    setTimeout(() => {
+        heart.remove();
+    },5000);
+}
+
+setInterval(createHeart,200);
+
+</script>
+
+</body>
+</html>
