@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Love Website ❤️</title>
+<title>Surprise Love Page ❤️</title>
 
 <style>
 
@@ -35,6 +35,29 @@ h1{
     z-index:2;
 }
 
+button{
+    margin-top:20px;
+    padding:15px 30px;
+    border:none;
+    border-radius:30px;
+    background:red;
+    color:white;
+    font-size:20px;
+    cursor:pointer;
+    box-shadow:0 0 20px red;
+    z-index:2;
+}
+
+#message{
+    display:none;
+    color:pink;
+    margin-top:20px;
+    font-size:30px;
+    text-align:center;
+    z-index:2;
+    text-shadow:0 0 15px pink;
+}
+
 audio{
     margin-top:20px;
     z-index:2;
@@ -61,13 +84,23 @@ audio{
 
 <img src="photo.jpg">
 
-<h1>I Love You ❤️</h1>
+<h1>I Have a Surprise ❤️</h1>
+
+<button onclick="showMessage()">Open Now 💌</button>
+
+<div id="message">
+    You Are My Favourite Person ❤️
+</div>
 
 <audio controls autoplay loop>
     <source src="music.mp3" type="audio/mp3">
 </audio>
 
 <script>
+
+function showMessage(){
+    document.getElementById("message").style.display = "block";
+}
 
 function createHeart(){
 
